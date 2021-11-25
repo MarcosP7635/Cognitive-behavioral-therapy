@@ -40,8 +40,10 @@ url = ("https://www.colorado.edu/herbst/sites/default/files/attached-files/" +
     "how_to_do_cbt.pdf")
 google_drive_url = ("https://drive.google.com/file/d/" +
            "1-hKJEgfNDixWbKuvTYMhCK379RD3y7Du/view?usp=sharing")
-print("\nPlease click on at least one of the following links for a free access"+
-      "PDF of \"How to Do CBT\"\n" + url + "\n" + google_drive_url +"\n" )
+tiny_url = ("https://tinyurl.com/how2cbtpdf")
+print("\nPlease click on at least one of the following links for a free access"
+      + " PDF of \"How to Do CBT\"\n" + tiny_url + "\n" + url + "\n" +
+      google_drive_url +"\n" )
 '''
 The plan is to write all of the prompts and put them in a list.
 Then we loop through the list and add each input to a dictionary.
