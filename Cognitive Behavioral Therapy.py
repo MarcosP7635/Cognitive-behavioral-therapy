@@ -1,5 +1,3 @@
-import time
-
 '''
 the is_no() function is used to evaluate whether the user says no to a question
 It outputs True if the user said no. Otherwise, it outputs False.
