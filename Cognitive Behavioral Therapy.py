@@ -55,7 +55,7 @@ and track progress.
 This is the template for each prompt I can copy paste to add new prompts.
 Remember to add it to the list named list_of_prompts too!
 promptn = ("  " +
-    "\n")
+    "\n ")
 '''
 prompt1 = ( "What thoughts are making you depressed and anxious?" )
 prompt2 = ( "What is your level of distress on a scale from 1 to 10? Where " +
@@ -64,14 +64,14 @@ prompt3 = ( "What happened? What were your automatic thoughts?")
 prompt4 = ( "Based on the PDF, is this a cognitive distortion?" )
 prompt5 = ( "Write down the cognitive distrotions you notice")
 prompt6 = ( "Look at the evidence for and against your thought. You can " +
-    "\nwrite it here if you like" )
+    "write it here if you like" )
 prompt7 = ( "What would someone say if they disagree with you. Is there " +
-    "\nmerit in their opinion?")
+    "merit in their opinion?")
 prompt8 = ("Consider again what happened and reevaluate the situation without" +
-    "\nthe cognitive distrotions")
+    "the cognitive distrotions")
 prompt9 = "Write down your new thoughts and feelings"
 prompt10 = ("Write down again using the same scale from 1 to 10 how anxious" +
-    "\ndepressed, or otherwise distressed you feel")
+    "depressed, or otherwise distressed you feel")
 list_of_prompts = [prompt1, prompt2, prompt3, prompt4, prompt5, prompt6,
     prompt7, prompt8, prompt9]
 dict_of_prompts = {}
