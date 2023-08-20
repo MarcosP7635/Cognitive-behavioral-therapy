@@ -51,7 +51,7 @@ prompt4 = ( "Based on the PDF, is this a cognitive distortion?" )
 prompt5 = ( "Write down the cognitive distrotions you notice")
 prompt6 = ( "Look at the evidence for and against your thought. You can " +
     "write it here if you like" )
-prompt7 = ( "What would someone say if they disagree with you. Is there " +
+prompt7 = ( "What would someone say if they disagree with you? Is there " +
     "merit in their opinion?")
 prompt8 = ("Consider again what happened and reevaluate the situation without" +
     "the cognitive distrotions")
