@@ -1,9 +1,5 @@
-
-#the is_no() function is used to evaluate whether the user says no to a question
-#It outputs True if the user said no. Otherwise, it outputs False.
-
 import streamlit as st
-#To be used to evaluate user input
+
 def is_no(string):
   substring_list = ("no", "No", "NO", "nO", "nah")
   output = False
@@ -12,7 +8,6 @@ def is_no(string):
       output = True
       return output
   return output
-
 
 #First we will greet the user with something friendly and inviting then
 #ask them if they want to open a relevant PDF for what this is based on :)
@@ -23,19 +18,18 @@ first_message = ("\n" +
     "please call 911\nEmergency on Caltech campus: please call: 626 395 5000" +
     "\nNational Suicide hotline: call 1-800-273-8255" +
     "\nLifeline Crisis chat:" +
-    "http://chat.suicidepreventionlifeline.org/GetHelp/LifelineChat.aspx\n" +
+    "http://chat.suicidepreventionlifeline.org/GetHelp/LifelineChat.aspx \n" +
     "If you are feeling suicidal, threatened, or need someone " +
     "to talk to please please\nseek help from the following resources:\n" +
     "Counseling Center, 24/7 phone number: (626) 395-8331"
     "\nTitle IX Office https://equity.caltech.edu/" +
     "\nDiversity Center https://diversity.caltech.edu/"
 )
-print("Hello! " +"\n" +
-    "Let's do cognitive behavioral therapy to make you feel better.")
-print("You're a good person and you have value :)")
-print("\nPlease read this message first:", first_message)
-st.text_input("Please hit enter when you are ready to continue with CBT")
 
+st.write("Hello! " +"\n" +
+    "Let's do cognitive behavioral therapy to make you feel better.")
+st.write("You're a good person and you have value :)")
+st.write("\nPlease read this message first:", first_message)
 
 url = ("https://www.colorado.edu/herbst/sites/default/files/attached-files/" +
     "how_to_do_cbt.pdf")
@@ -46,15 +40,9 @@ st.write("\nPlease click on at least one of the following links for a free acces
       + " PDF of \"How to Do CBT\"\n" + tiny_url + "\n" + url + "\n" +
       google_drive_url +"\n" )
 
-#The plan is to write all of the prompts and put them in a list.
-#Then we loop through the list and add each input to a dictionary.
-#At the end, the dictionary of responses will be added to text file
-#with the time and date for me to look at when I'm sad.
-#The idea is to build up responses because I think the cognitive behavior
-#therapy will get repetitive, and I think it will be good to read it at the end
-#and track progress.
-#This is the template for each prompt I can copy paste to add new prompts.
-#Remember to add it to the list named list_of_prompts too!
+# This is writing directly to the main body. Since the form container is
+# defined above, this will appear below everything written in the form.
+
 prompt1 = ( "What thoughts are making you depressed and anxious?" )
 prompt2 = ( "What is your level of distress on a scale from 1 to 10? Where " +
     "10 is the worst you could ever feel in your life ")
@@ -73,30 +61,28 @@ prompt10 = ("Write down again using the same scale from 1 to 10 how anxious" +
 list_of_prompts = [prompt1, prompt2, prompt3, prompt4, prompt5, prompt6,
     prompt7, prompt8, prompt9]
 dict_of_prompts = {}
-for text_input_key, prompt in enumerate(list_of_prompts):
-        text_input_key += 1
-        st.write(prompt)
-        long_input = st.text_input("Type any character if the answer to the above" +
-        " question " + "is a long input. Otherwise, just hit enter:\n",
-        key = text_input_key)
-        #this works because any non empty string in Python is True
-        if(long_input and (not is_no(long_input))):
-            print("Just enter nothing when you are done")
-            lines = []
-            while True:
-                line = st.text_input(prompt + "\nplease type here: ", 
-                                     key = text_input_key*100)
-                if (line and not (line == "nothing" or line == "Nothing")):
-                    lines.append(line)
-                else:
-                    break
-            multi_line_input = '\n'.join(lines)
-            dict_of_prompts[prompt] = multi_line_input
-        else:
-            if not "?" in prompt:
-              dict_of_prompts[prompt] = st.text_input(prompt + ":\n", key = text_input_key*-1)
-            else:
-               dict_of_prompts[prompt] = st.text_input(prompt + "\n", 
-                                                       key = text_input_key*-100)
 
-st.write("\nYou're a good person and you have value")
+def main():
+    question = st.form('my_question')
+    current_index = 0
+    # These methods called on the form container, so they appear inside the form.
+    submit = question.form_submit_button('Click here to begin.')
+    if submit:
+         ask(current_index, question)
+
+def ask(current_index, question):
+    if not current_index < len(list_of_prompts):
+        st.write("\nYou're a good person and you have value")
+        st.stop()
+    prompt, text_input_key = list_of_prompts[current_index], current_index+1
+    if not "?" in prompt:
+        submit_text = question.text_area(prompt + ":\n", key = text_input_key*-1)
+    else:
+        submit_text = question.text_area(prompt + "\n", 
+                                                    key = text_input_key*-100)
+    #submit_button = question.form_submit_button(
+    #    f'Click here to or hit ctrl+enter to enter your response')
+    if submit_text:# or submit_button:
+        #new_question = st.form('my_question' + str(current_index))
+        ask(current_index+1, question)
+main()
