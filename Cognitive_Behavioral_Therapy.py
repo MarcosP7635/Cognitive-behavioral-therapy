@@ -1,7 +1,8 @@
-'''
-the is_no() function is used to evaluate whether the user says no to a question
-It outputs True if the user said no. Otherwise, it outputs False.
-'''
+
+#the is_no() function is used to evaluate whether the user says no to a question
+#It outputs True if the user said no. Otherwise, it outputs False.
+
+import streamlit as st
 #To be used to evaluate user input
 def is_no(string):
   substring_list = ("no", "No", "NO", "nO", "nah")
@@ -12,10 +13,10 @@ def is_no(string):
       return output
   return output
 
-'''
-First we will greet the user with something friendly and inviting then
-ask them if they want to open a relevant PDF for what this is based on :)
-'''
+
+#First we will greet the user with something friendly and inviting then
+#ask them if they want to open a relevant PDF for what this is based on :)
+
 first_message = ("\n" +
     "\nHelp lines:\n" +
     "If you or others are in immediate danger, or fear for your safety: " +
@@ -33,7 +34,7 @@ print("Hello! " +"\n" +
     "Let's do cognitive behavioral therapy to make you feel better.")
 print("You're a good person and you have value :)")
 print("\nPlease read this message first:", first_message)
-input("Please hit enter when you are ready to continue with CBT")
+st.text_input("Please hit enter when you are ready to continue with CBT")
 
 
 url = ("https://www.colorado.edu/herbst/sites/default/files/attached-files/" +
@@ -41,7 +42,7 @@ url = ("https://www.colorado.edu/herbst/sites/default/files/attached-files/" +
 google_drive_url = ("https://drive.google.com/file/d/" +
            "1-hKJEgfNDixWbKuvTYMhCK379RD3y7Du/view?usp=sharing")
 tiny_url = ("https://tinyurl.com/how2cbtpdf")
-print("\nPlease click on at least one of the following links for a free access"
+st.echo("\nPlease click on at least one of the following links for a free access"
       + " PDF of \"How to Do CBT\"\n" + tiny_url + "\n" + url + "\n" +
       google_drive_url +"\n" )
 '''
@@ -78,15 +79,15 @@ list_of_prompts = [prompt1, prompt2, prompt3, prompt4, prompt5, prompt6,
     prompt7, prompt8, prompt9]
 dict_of_prompts = {}
 for prompt in list_of_prompts:
-        print(prompt)
-        long_input = input("Type any character if the answer to the above" +
+        st.echo(prompt)
+        long_input = st.text_input("Type any character if the answer to the above" +
         " question " + "is a long input. Otherwise, just hit enter:\n")
         #this works because any non empty string in Python is True
         if(long_input and (not is_no(long_input))):
             print("Just enter nothing when you are done")
             lines = []
             while True:
-                line = input(prompt + "\nplease type here: ")
+                line = st.text_input(prompt + "\nplease type here: ")
                 if (line and not (line == "nothing" or line == "Nothing")):
                     lines.append(line)
                 else:
@@ -95,8 +96,8 @@ for prompt in list_of_prompts:
             dict_of_prompts[prompt] = multi_line_input
         else:
             if not "?" in prompt:
-              dict_of_prompts[prompt] = input(prompt + ":\n")
+              dict_of_prompts[prompt] = st.text_input(prompt + ":\n")
             else:
-               dict_of_prompts[prompt] = input(prompt + "\n")
+               dict_of_prompts[prompt] = st.text_input(prompt + "\n")
 
 print("\nYou're a good person and you have value")
