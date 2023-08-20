@@ -66,7 +66,7 @@ def main():
     question = st.form('my_question')
     current_index = 0
     # These methods called on the form container, so they appear inside the form.
-    submit = question.form_submit_button('Click here to begin.')
+    submit = question.form_submit_button('Click here to proceed.')
     if submit:
          ask(current_index, question)
 
@@ -75,11 +75,9 @@ def ask(current_index, question):
         st.write("\nYou're a good person and you have value")
         st.stop()
     prompt, text_input_key = list_of_prompts[current_index], current_index+1
-    if not "?" in prompt:
-        submit_text = question.text_area(prompt + ":\n", key = text_input_key*-1)
-    else:
-        submit_text = question.text_area(prompt + "\n", 
-                                                    key = text_input_key*-100)
+    submit_text = question.text_area(prompt + 
+        " Please click the button at the top or hit ctrl+enter to proceed.", 
+        key = text_input_key*-1)
     #submit_button = question.form_submit_button(
     #    f'Click here to or hit ctrl+enter to enter your response')
     if submit_text:# or submit_button:
