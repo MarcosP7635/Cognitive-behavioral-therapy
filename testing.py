@@ -64,11 +64,12 @@ dict_of_prompts = {}
 
 def main():
     question = st.form('my_question')
-    current_index = 0
+    current_index = -1
     # These methods called on the form container, so they appear inside the form.
     submit = question.form_submit_button('Click here to proceed.')
     if submit:
-         ask(current_index, question)
+        current_index += 1
+        ask(current_index, question)
 
 def ask(current_index, question):
     if not current_index < len(list_of_prompts):
