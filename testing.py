@@ -73,13 +73,13 @@ def main():
 
 def ask(current_index, question):
     if not current_index < len(list_of_prompts):
-        st.write("\nYou're a good person and you have value")
         st.stop()
     prompt, text_input_key = list_of_prompts[current_index], current_index+1
     if current_index == len(list_of_prompts) - 1:
         submit_text = question.text_area(prompt + 
             " Please reload the page or go to this website again if you need to continue.", 
             key = text_input_key*-1)   
+        st.write("\nYou're a good person and you have value")
     else:
         submit_text = question.text_area(prompt + 
             " Please click the button at the top or hit ctrl+enter to proceed.", 
