@@ -45,19 +45,19 @@ st.write("\nPlease click on at least one of the following links for a free acces
 
 prompt1 = ( "What thoughts are making you depressed and anxious?" )
 prompt2 = ( "What is your level of distress on a scale from 1 to 10? Where " +
-    "10 is the worst you could ever feel in your life ")
+    "10 is the worst you could ever feel in your life.")
 prompt3 = ( "What happened? What were your automatic thoughts?")
 prompt4 = ( "Based on the PDF, is this a cognitive distortion?" )
-prompt5 = ( "Write down the cognitive distrotions you notice")
+prompt5 = ( "Please write the cognitive distrotions you notice.")
 prompt6 = ( "Look at the evidence for and against your thought. You can " +
     "write it here if you like" )
 prompt7 = ( "What would someone say if they disagree with you? Is there " +
     "merit in their opinion?")
-prompt8 = ("Consider again what happened and reevaluate the situation without" +
-    "the cognitive distrotions")
-prompt9 = "Write down your new thoughts and feelings"
-prompt10 = ("Write down again using the same scale from 1 to 10 how anxious" +
-    "depressed, or otherwise distressed you feel")
+prompt8 = ("Consider again what happened and reevaluate the situation without " +
+    "the cognitive distrotions.")
+prompt9 = "Write down your new thoughts and feelings."
+prompt10 = ("Write down again using the same scale from 1 to 10 how anxious, " +
+    "depressed, or otherwise distressed you feel.")
 list_of_prompts = [prompt1, prompt2, prompt3, prompt4, prompt5, prompt6,
     prompt7, prompt8, prompt9]
 dict_of_prompts = {}
