@@ -17,22 +17,23 @@ def is_no(string):
 #First we will greet the user with something friendly and inviting then
 #ask them if they want to open a relevant PDF for what this is based on :)
 
-first_message = ("\n" +
-    "\nHelp lines:\n" +
-    "If you or others are in immediate danger, or fear for your safety: " +
-    "please call 911\n" +"Emergency on Caltech campus: please call: 626 395 5000\n" +
-    "National Suicide hotline: call 1-800-273-8255\n" +
-    "Lifeline Crisis chat:" +
-    "http://chat.suicidepreventionlifeline.org/GetHelp/LifelineChat.aspx\n" +
-    "If you are feeling suicidal, threatened, or need someone " +
-    "to talk to please please\n" + "seek help from the following resources:\n" +
-    "Counseling Center, 24/7 phone number: (626) 395-8331\n"
-    "Title IX Office https://equity.caltech.edu/\n" +
-    "Diversity Center https://diversity.caltech.edu/"
-)
-println("Hello!\n " + "Let's do cognitive behavioral therapy to make you feel better.")
+first_message_list = ["Help lines:", 
+    "If you or others are in immediate danger, or fear for your safety: please call 911",
+    "Emergency on Caltech campus: please call: 626 395 5000",
+    "National Suicide hotline: call 1-800-273-8255",
+    "Lifeline Crisis chat:",
+    "http://chat.suicidepreventionlifeline.org/GetHelp/LifelineChat.aspx",
+    "If you are feeling suicidal, threatened, or need someone ",
+    "to talk to please please", "seek help from the following resources:",
+    "Counseling Center, 24/7 phone number: (626) 395-8331",
+    "Title IX Office https://equity.caltech.edu/",
+    "Diversity Center https://diversity.caltech.edu/"]
+println("Hello!") 
+println("Let's do cognitive behavioral therapy to make you feel better.")
 println("You're a good person and you have value :)")
-println("\nPlease read this message first:", first_message)
+println("Please read this message first:")
+for message in first_message_list:
+    println(first_message_list)
 st.text_input("Please hit enter when you are ready to continue with CBT")
 
 
