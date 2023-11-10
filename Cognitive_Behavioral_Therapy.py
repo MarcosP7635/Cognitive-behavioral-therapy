@@ -20,20 +20,19 @@ def is_no(string):
 first_message = ("\n" +
     "\nHelp lines:\n" +
     "If you or others are in immediate danger, or fear for your safety: " +
-    "please call 911\nEmergency on Caltech campus: please call: 626 395 5000" +
-    "\nNational Suicide hotline: call 1-800-273-8255" +
-    "\nLifeline Crisis chat:" +
+    "please call 911\n" +"Emergency on Caltech campus: please call: 626 395 5000\n" +
+    "National Suicide hotline: call 1-800-273-8255\n" +
+    "Lifeline Crisis chat:" +
     "http://chat.suicidepreventionlifeline.org/GetHelp/LifelineChat.aspx\n" +
     "If you are feeling suicidal, threatened, or need someone " +
-    "to talk to please please\nseek help from the following resources:\n" +
-    "Counseling Center, 24/7 phone number: (626) 395-8331"
-    "\nTitle IX Office https://equity.caltech.edu/" +
-    "\nDiversity Center https://diversity.caltech.edu/"
+    "to talk to please please\n" + "seek help from the following resources:\n" +
+    "Counseling Center, 24/7 phone number: (626) 395-8331\n"
+    "Title IX Office https://equity.caltech.edu/\n" +
+    "Diversity Center https://diversity.caltech.edu/"
 )
-print("Hello! " +"\n" +
-    "Let's do cognitive behavioral therapy to make you feel better.")
-print("You're a good person and you have value :)")
-print("\nPlease read this message first:", first_message)
+println("Hello!\n " + "Let's do cognitive behavioral therapy to make you feel better.")
+println("You're a good person and you have value :)")
+println("\nPlease read this message first:", first_message)
 st.text_input("Please hit enter when you are ready to continue with CBT")
 
 
