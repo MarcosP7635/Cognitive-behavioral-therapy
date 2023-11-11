@@ -28,12 +28,12 @@ first_message_list = ["Help lines:",
     "Counseling Center, 24/7 phone number: (626) 395-8331",
     "Title IX Office https://equity.caltech.edu/",
     "Diversity Center https://diversity.caltech.edu/"]
-println("Hello!") 
-println("Let's do cognitive behavioral therapy to make you feel better.")
-println("You're a good person and you have value :)")
-println("Please read this message first:")
+st.write("Hello!") 
+st.write("Let's do cognitive behavioral therapy to make you feel better.")
+st.write("You're a good person and you have value :)")
+st.write("Please read this message first:")
 for message in first_message_list:
-    println(first_message_list)
+    st.write(first_message_list)
 st.text_input("Please hit enter when you are ready to continue with CBT")
 
 
