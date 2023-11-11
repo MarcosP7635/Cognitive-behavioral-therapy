@@ -28,7 +28,7 @@ first_message_list = ["Help lines:",
     "Counseling Center, 24/7 phone number: (626) 395-8331",
     "Title IX Office https://equity.caltech.edu/",
     "Diversity Center https://diversity.caltech.edu/"]
-st.write("Hello!") 
+st.write("_Hello!") 
 st.write("Let's do cognitive behavioral therapy to make you feel better.")
 st.write("You're a good person and you have value :)")
 st.write("Please read this message first:")
