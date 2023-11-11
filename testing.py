@@ -26,7 +26,7 @@ st.write("Hello! " +"\n" +
 st.write("You're a good person and you have value :)")
 st.write("\nPlease read this message first:")
 for message in first_message_list:
-    st.write(first_message_list)
+    st.write(message)
 st.text_input("Please hit enter when you are ready to continue with CBT")
 
 url = ("https://www.colorado.edu/herbst/sites/default/files/attached-files/" +
