@@ -14,14 +14,13 @@ def is_no(string):
 
 first_message_list = ["Help lines:", 
     "If you or others are in immediate danger, or fear for your safety please call 911",
-    "If this happens on the Caltech campus please call: 626 395 5000",
-    "National Suicide hotline: call 1-800-273-8255",
-    "Lifeline Crisis chat:",
+    "\nIf this is on the Caltech campus please call: 626 395 5000",
+    "\nNational Suicide hotline: call 1-800-273-8255",
+    "\nLifeline Crisis chat:",
     "http://chat.suicidepreventionlifeline.org/GetHelp/LifelineChat.aspx",
-    "If you are feeling suicidal, threatened, or need someone to talk to please please seek help from the following resources:",
-    "Counseling Center, 24/7 phone number: (626) 395-8331",
-    "Title IX Office https://equity.caltech.edu/",
-    "Diversity Center https://diversity.caltech.edu/"]
+    "\nIf you are feeling suicidal, threatened, or need someone to talk to please please seek help from the following resources:",
+    "\nCaltech Counseling Center 24/7 phone number: (626) 395-8331",
+    "\nTitle IX Office https://equity.caltech.edu/ Diversity Center https://diversity.caltech.edu/"]
 st.write("Hello! " +"\n" +
     "Let's do cognitive behavioral therapy to make you feel better.")
 st.write("You're a good person and you have value :)")
