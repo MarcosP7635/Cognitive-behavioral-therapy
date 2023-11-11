@@ -13,7 +13,7 @@ def is_no(string):
 #ask them if they want to open a relevant PDF for what this is based on :)
 
 first_message = ("\n" +
-    "\nHelp lines:\n" +
+    "\n_Help lines:\n" +
     "If you or others are in immediate danger, or fear for your safety: " +
     "please call 911\nEmergency on Caltech campus: please call: 626 395 5000" +
     "\nNational Suicide hotline: call 1-800-273-8255" +
