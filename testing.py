@@ -27,7 +27,6 @@ st.write("You're a good person and you have value :)")
 st.write("\nPlease read this message first:")
 for message in first_message_list:
     st.write(message)
-st.text_input("Please hit enter when you are ready to continue with CBT")
 
 url = ("https://www.colorado.edu/herbst/sites/default/files/attached-files/" +
     "how_to_do_cbt.pdf")
@@ -59,12 +58,12 @@ prompt10 = ("Write down again using the same scale from 1 to 10 how anxious, " +
 list_of_prompts = [prompt1, prompt2, prompt3, prompt4, prompt5, prompt6,
     prompt7, prompt8, prompt9]
 dict_of_prompts = {}
-
+st.write("Please use the button below continue with CBT")
 def main():
     question = st.form('my_question')
     current_index = -1
     # These methods called on the form container, so they appear inside the form.
-    submit = question.form_submit_button('Click here to proceed.')
+    submit = question.form_submit_button('Click or tap here to proceed.')
     if submit:
         current_index += 1
         ask(current_index, question)
