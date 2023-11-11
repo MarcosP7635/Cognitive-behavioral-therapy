@@ -12,24 +12,23 @@ def is_no(string):
 #First we will greet the user with something friendly and inviting then
 #ask them if they want to open a relevant PDF for what this is based on :)
 
-first_message = ("\n" +
-    "\nHelp lines:\n" +
-    "If you or others are in immediate danger, or fear for your safety: " +
-    "please call 911\nEmergency on Caltech campus: please call: 626 395 5000" +
-    "\nNational Suicide hotline: call 1-800-273-8255" +
-    "\nLifeline Crisis chat:" +
-    "http://chat.suicidepreventionlifeline.org/GetHelp/LifelineChat.aspx \n" +
-    "If you are feeling suicidal, threatened, or need someone " +
-    "to talk to please please\nseek help from the following resources:\n" +
-    "Counseling Center, 24/7 phone number: (626) 395-8331"
-    "\nTitle IX Office https://equity.caltech.edu/" +
-    "\nDiversity Center https://diversity.caltech.edu/"
-)
-
+first_message_list = ["Help lines:", 
+    "If you or others are in immediate danger, or fear for your safety please call 911",
+    "If this happens on the Caltech campus please call: 626 395 5000",
+    "National Suicide hotline: call 1-800-273-8255",
+    "Lifeline Crisis chat:",
+    "http://chat.suicidepreventionlifeline.org/GetHelp/LifelineChat.aspx",
+    "If you are feeling suicidal, threatened, or need someone to talk to please please seek help from the following resources:",
+    "Counseling Center, 24/7 phone number: (626) 395-8331",
+    "Title IX Office https://equity.caltech.edu/",
+    "Diversity Center https://diversity.caltech.edu/"]
 st.write("Hello! " +"\n" +
     "Let's do cognitive behavioral therapy to make you feel better.")
 st.write("You're a good person and you have value :)")
-st.write("\nPlease read this message first:", first_message)
+st.write("\nPlease read this message first:")
+for message in first_message_list:
+    st.write(first_message_list)
+st.text_input("Please hit enter when you are ready to continue with CBT")
 
 url = ("https://www.colorado.edu/herbst/sites/default/files/attached-files/" +
     "how_to_do_cbt.pdf")
